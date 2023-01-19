@@ -82,12 +82,18 @@ fun main() {
 
     val sphere = Sphere(Point(500f, 500f, 500f), radius = 500f, color = MaterialColor(0f, 1.0f, 0f))
     val plane = Plane(
-        Point(0f, -500f, 0f),
+        Point(0f, -1000f, 0f),
         normal = Vector(0f, 1f, 0f),
         color = MaterialColor(0.5f, 0.5f, 0.5f)
     )
 
-    val scene = Scene(listOf(sphere, plane))
+    val leftPlane = Plane(
+        Point(-1000f, 0f, 0f),
+        Vector(1f, 0f, 0f),
+        color = MaterialColor(0.9f, 0.9f, 0.5f)
+    )
+
+    val scene = Scene(listOf(sphere, plane, leftPlane))
 
     val ambient = MaterialColor(0.1f, 0.1f, 0.1f)
 
