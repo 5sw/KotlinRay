@@ -103,7 +103,7 @@ fun main() {
             if (hit != null) {
                 var color = hit.color * ambient
 
-                val rayToLight = hit.point.rayTo(light.point)
+                val rayToLight = (hit.point + 0.0001f * hit.normal).rayTo(light.point)
                 if (scene.intersects(rayToLight) == null) {
 
                     val lambert = max(0f, dot(hit.normal, rayToLight.direction))
