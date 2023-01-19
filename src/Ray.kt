@@ -1,6 +1,5 @@
 import java.io.File
 import java.lang.Float.max
-import java.lang.Math.pow
 import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
@@ -57,7 +56,7 @@ fun main() {
     val ambient = MaterialColor(0.1f, 0.1f, 0.1f)
 
     val light = PointLight(Point(1000f, 1000f, -500f), color = MaterialColor(0.5f, 0.5f, 0.5f))
-    val specular = 2.4f
+    val specular = 100f
 
     for (y in 0 until bmp.height) {
         for (x in 0 until bmp.width) {
@@ -74,7 +73,7 @@ fun main() {
                     val lambert = max(0f, dot(hit.normal, rayToLight.direction))
                     color += lambert * light.color
 
-                    val h = (ray.direction + rayToLight.direction).normalized()
+                    val h = (-ray.direction + rayToLight.direction).normalized()
 
                     val intensity = dot(hit.normal, h).pow(specular)
 
