@@ -1,3 +1,11 @@
+package things
+
+import Hit
+import math.Point
+import math.Ray
+import math.Vector
+import materials.Material
+
 data class Plane(val point: Point, val normal: Vector, val material: Material) : Thing {
     override fun intersects(ray: Ray): Hit? {
         val bottom = normal dot ray.direction

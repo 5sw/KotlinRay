@@ -1,3 +1,9 @@
+package materials
+
+import Hit
+import math.Ray
+import things.Scene
+import math.times
 import kotlin.math.pow
 
 data class ReflectiveMaterial(

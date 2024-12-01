@@ -1,3 +1,10 @@
+package things
+
+import Hit
+import materials.MaterialColor
+import lights.PointLight
+import math.Ray
+
 data class Scene(val things: List<Thing>, val light: PointLight): Thing {
     override fun intersects(ray: Ray): Hit? {
         var closest: Hit? = null

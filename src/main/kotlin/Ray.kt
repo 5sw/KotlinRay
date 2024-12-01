@@ -1,9 +1,14 @@
+import lights.PointLight
+import materials.MaterialColor
+import materials.ReflectiveMaterial
+import materials.WhateverMaterial
+import materials.times
+import math.Point
+import math.Vector
+import things.Plane
+import things.Scene
+import things.Sphere
 import java.io.File
-
-
-data class Ray(val origin: Point, val direction: Vector) {
-    fun at(t: Float) = origin + t * direction
-}
 
 
 fun main() {

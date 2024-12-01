@@ -1,3 +1,9 @@
+package things
+
+import Hit
+import math.Point
+import math.Ray
+import materials.Material
 import kotlin.math.min
 import kotlin.math.sqrt
 

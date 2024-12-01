@@ -1,3 +1,7 @@
+package materials
+
+import Color
+
 data class MaterialColor(val r: Float, val g: Float, val b: Float) {
     fun toColor(): Color = Color(
         (r * UByte.MAX_VALUE.toFloat()).toInt().toUByte(),
