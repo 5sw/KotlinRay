@@ -1,0 +1,1 @@
+data class PointLight(val point: Point, val color: MaterialColor)

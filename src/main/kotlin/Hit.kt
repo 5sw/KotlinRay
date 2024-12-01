@@ -1,0 +1,1 @@
+data class Hit(val point: Point, val normal: Vector, val distance: Float, val material: Material)
