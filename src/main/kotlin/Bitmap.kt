@@ -5,6 +5,7 @@ const val BYTES_PER_PIXEL = 4
 
 data class Color(val r: UByte, val g: UByte, val b: UByte, val alpha: UByte = UByte.MAX_VALUE)
 
+@OptIn(ExperimentalUnsignedTypes::class)
 class Bitmap(val width: Int, val height: Int) {
     val data = UByteArray(width * height * BYTES_PER_PIXEL)
 
@@ -27,6 +28,7 @@ class Bitmap(val width: Int, val height: Int) {
     }
 }
 
+@OptIn(ExperimentalUnsignedTypes::class)
 fun File.writeBitmap(bitmap: Bitmap) {
     outputStream().use { stream ->
         stream.write(0) // ID length
