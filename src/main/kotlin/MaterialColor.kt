@@ -12,3 +12,5 @@ data class MaterialColor(val r: Float, val g: Float, val b: Float) {
         val Black: MaterialColor = MaterialColor(0f, 0f, 0f)
     }
 }
+
+operator fun Float.times(rhs: MaterialColor) = MaterialColor(this * rhs.r, this * rhs.g, this * rhs.b)

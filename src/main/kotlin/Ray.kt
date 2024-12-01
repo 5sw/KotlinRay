@@ -1,6 +1,5 @@
 import java.io.File
 
-operator fun Float.times(rhs: MaterialColor) = MaterialColor(this * rhs.r, this * rhs.g, this * rhs.b)
 
 data class Ray(val origin: Point, val direction: Vector) {
     fun at(t: Float) = origin + t * direction
