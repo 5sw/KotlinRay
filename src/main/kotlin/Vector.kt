@@ -11,6 +11,8 @@ data class Vector(val x: Float, val y: Float, val z: Float) {
     operator fun unaryMinus(): Vector = Vector(-x, -y, -z)
     operator fun minus(rhs: Vector): Vector = Vector(x - rhs.x, y - rhs.y, z - rhs.z)
     operator fun div(rhs: Float): Vector = Vector(x / rhs, y / rhs, z / rhs)
+
+    infix fun dot(rhs: Vector): Float = x * rhs.x + y * rhs.y + z * rhs.z
 }
 
 operator fun Float.times(rhs: Vector): Vector = rhs * this
