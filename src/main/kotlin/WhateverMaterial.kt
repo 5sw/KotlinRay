@@ -10,12 +10,12 @@ data class WhateverMaterial(val color: MaterialColor,
         val rayToLight = (hit.point + 0.0001f * hit.normal).rayTo(light.point)
         if (scene.intersects(rayToLight) == null) {
 
-            val lambert = java.lang.Float.max(0f, dot(hit.normal, rayToLight.direction))
+            val lambert = java.lang.Float.max(0f, hit.normal dot rayToLight.direction)
             color += lambert * light.color
 
             val h = (-ray.direction + rayToLight.direction).normalized()
 
-            val intensity = dot(hit.normal, h).pow(specular)
+            val intensity = (hit.normal dot h).pow(specular)
 
             color += intensity * MaterialColor(0.3f, 0f, 0f)
         }

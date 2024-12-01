@@ -4,7 +4,7 @@ import kotlin.math.sqrt
 data class Sphere(val center: Point, val radius: Float, val material: Material) : Thing {
     override fun intersects(ray: Ray): Hit? {
         val l = center - ray.origin
-        val tc = dot(l, ray.direction)
+        val tc = l dot ray.direction
         if (tc < 0f) return null
 
         val d = l.squaredLength - tc * tc

@@ -13,7 +13,7 @@ data class ReflectiveMaterial(
         val rayToLight = offsetPoint.rayTo(light.point)
         if (scene.intersects(rayToLight) == null) {
 
-            val lambert = java.lang.Float.max(0f, dot(hit.normal, rayToLight.direction))
+            val lambert = java.lang.Float.max(0f, hit.normal dot rayToLight.direction)
             color += lambert * light.color
 
             val h = (-ray.direction + rayToLight.direction).normalized()

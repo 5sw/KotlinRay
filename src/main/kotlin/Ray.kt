@@ -7,8 +7,6 @@ data class Ray(val origin: Point, val direction: Vector) {
 }
 
 
-fun dot(lhs: Vector, rhs: Vector): Float = lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z
-
 fun main() {
     val bmp = Bitmap(1000, 1000)
     val origin = Point(500f, 500f, -500f)
